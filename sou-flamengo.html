@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sou Flamengo — Nicolas Isaac</title>
+  <meta name="description" content="Projeto pessoal de Nicolas Isaac que usa a história, os personagens e os símbolos do Flamengo como território para experimentar diferentes linguagens de direção de arte.">
+  <meta name="author" content="Nicolas Isaac">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#d9d9d6">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sou Flamengo — Nicolas Isaac">
+  <meta property="og:description" content="Projeto pessoal de Nicolas Isaac que usa a história, os personagens e os símbolos do Flamengo como território para experimentar diferentes linguagens de direção de arte.">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#d9d9d6;
+  --ink:#111111;
+  --muted:#666663;
+  --line:#a9a9a5;
+  --pad:clamp(20px,3vw,52px);
+  --display:"Red Hat Display",Arial,sans-serif;
+  --body:"Google Sans",Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+
+html{
+  background:var(--bg);
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.project-header{
+  min-height:78vh;
+  padding:var(--pad);
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  gap:36px;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+
+.title-wrap{
+  align-self:center;
+  padding-top:.08em;
+  padding-bottom:.08em;
+}
+
+h1{
+  margin:0;
+  max-width:11ch;
+  font-family:var(--display);
+  font-size:clamp(72px,10.2vw,170px);
+  font-weight:900;
+  letter-spacing:-.06em;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.meta{
+  height:1px;
+  border-top:1px solid var(--ink);
+}
+
+/* CORPO DO CASE */
+.case-layout{
+  padding:0 var(--pad) clamp(100px,12vw,180px);
+  display:grid;
+  grid-template-columns:minmax(180px, 22vw) minmax(0,1fr);
+  gap:clamp(28px,4vw,64px);
+  align-items:start;
+}
+
+.case-summary{
+  position:sticky;
+  top:var(--pad);
+  align-self:start;
+  padding-top:2px;
+}
+
+.summary-label{
+  margin:0 0 28px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.summary-text{
+  max-width:26ch;
+  margin:0 0 28px;
+  font-size:clamp(15px,1.15vw,18px);
+  line-height:1.45;
+}
+
+.summary-meta{
+  padding-top:16px;
+  border-top:1px solid var(--ink);
+  display:grid;
+  gap:8px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+
+.project-media{
+  display:grid;
+  gap:clamp(18px,2vw,30px);
+}
+
+.media-group{
+  display:grid;
+  grid-template-columns:repeat(var(--cols), minmax(0,1fr));
+  gap:clamp(10px,1.2vw,18px);
+  align-items:start;
+}
+
+.media-item{
+  width:100%;
+  min-width:0;
+  overflow:hidden;
+  background:#b7b7b3;
+}
+
+.media-item img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.media-video{
+  aspect-ratio:16/9;
+}
+
+.media-video iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+@media(max-width:820px){
+  .media-group{
+    grid-template-columns:1fr;
+  }
+}
+/* PRÓXIMO PROJETO */
+.next-project{
+  margin:0 var(--pad);
+  padding:22px 0 clamp(24px, 2.5vw, 36px);
+  border-top:1px solid var(--ink);
+  display:grid;
+  grid-template-columns:minmax(180px, .7fr) minmax(0,1.6fr);
+  gap:clamp(30px,5vw,80px);
+  align-items:start;
+}
+
+.next-label,
+.next-title{
+  font-family:var(--display);
+  font-size:clamp(30px,3.2vw,48px);
+  line-height:1;
+  font-weight:600;
+  letter-spacing:-.04em;
+  text-transform:uppercase;
+}
+
+.next-title{
+  text-align:right;
+}
+
+/* CONTATO — MESMO COMPONENTE DA HOME */
+
+.section{
+  padding:clamp(32px, 4vw, 44px) var(--pad) var(--pad);
+}
+
+.section-label{
+  margin:0 0 clamp(26px, 4vw, 42px);
+  font-size:11px;
+  line-height:1;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.contact{
+  border-top:0;
+  padding-top:0;
+  padding-bottom:clamp(34px, 4vw, 58px);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(24px, 5vw, 70px);
+  margin-top:0;
+}
+
+.contact-item{
+  border-top:1px solid var(--ink);
+  padding-top:12px;
+  text-decoration:none;
+  min-height:110px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.contact-kicker{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.contact-value{
+  font-family:var(--display);
+  font-size:clamp(24px, 2.6vw, 42px);
+  line-height:.95;
+  letter-spacing:-.04em;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.footer{
+  margin-top:clamp(80px, 10vw, 140px);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+
+@media(hover:hover){
+  .contact-item:hover .contact-value{opacity:.5}
+  .next-project:hover .next-title{opacity:.5}
+}
+
+@media(max-width:820px){
+  .project-header{
+    min-height:auto;
+  }
+
+  h1{
+    font-size:clamp(62px,18vw,118px);
+  }
+
+  .case-layout{
+    grid-template-columns:1fr;
+  }
+
+  .case-summary{
+    position:static;
+    max-width:560px;
+  }
+
+  .summary-text{
+    max-width:36ch;
+  }
+
+  .next-project{
+    grid-template-columns:1fr;
+  }
+
+  .next-title{
+    text-align:left;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer{
+    flex-direction:column;
+  }
+}
+</style>
+
+</head>
+
+<body>
+<main>
+  <header class="project-header">
+    <nav class="nav">
+      <a href="../index.html">← Nicolas Isaac</a>
+      <span>Diretor de arte</span>
+    </nav>
+
+    <div class="title-wrap">
+      <h1>Sou Flamengo</h1>
+    </div>
+
+    <div class="meta" aria-hidden="true"></div>
+  </header>
+
+  <section class="case-layout">
+    <aside class="case-summary">
+      <p class="summary-label">Sobre o projeto</p>
+      <p class="summary-text">
+        Um projeto pessoal criado para experimentar sem as limitações de um briefing comercial. A história, os personagens e os símbolos do Flamengo viram matéria-prima para testar diferentes linguagens e caminhos de direção de arte — sempre a partir da vontade de criar sobre o time que amo.
+      </p>
+
+      <div class="summary-meta">
+        <span>Cliente — Projeto pessoal</span>
+        <span>Ano — Desde 2024</span>
+        <span>Direção de Arte — Nicolas Isaac</span>
+      </div>
+    </aside>
+
+    <div class="project-media">
+<div class="media-group" style="--cols:1">
+<div class="media-item">
+  <img src="../assets/sou-flamengo/01.webp" alt="" loading="lazy">
+</div>
+</div>
+<div class="media-group" style="--cols:2">
+<div class="media-item">
+  <img src="../assets/sou-flamengo/02.1.webp" alt="" loading="lazy">
+</div>
+<div class="media-item">
+  <img src="../assets/sou-flamengo/02.2.webp" alt="" loading="lazy">
+</div>
+</div>
+<div class="media-group" style="--cols:1">
+<div class="media-item">
+  <img src="../assets/sou-flamengo/03.webp" alt="" loading="lazy">
+</div>
+</div>
+<div class="media-group" style="--cols:2">
+<div class="media-item">
+  <img src="../assets/sou-flamengo/04.1.webp" alt="" loading="lazy">
+</div>
+<div class="media-item">
+  <img src="../assets/sou-flamengo/04.2.webp" alt="" loading="lazy">
+</div>
+</div>
+<div class="media-group" style="--cols:1">
+<div class="media-item">
+  <img src="../assets/sou-flamengo/05.webp" alt="" loading="lazy">
+</div>
+</div>
+<div class="media-group" style="--cols:2">
+<div class="media-item">
+  <img src="../assets/sou-flamengo/06.1.webp" alt="" loading="lazy">
+</div>
+<div class="media-item">
+  <img src="../assets/sou-flamengo/06.2.webp" alt="" loading="lazy">
+</div>
+</div>
+    </div>
+  </section>
+
+  <a class="next-project" href="deixa-eu-te-contar-um-negocio.html">
+    <span class="next-label">Próximo projeto</span>
+    <span class="next-title">Deixa eu te contar um negócio →</span>
+  </a>
+
+  
+<section class="section contact" id="contact">
+  <div class="contact-grid">
+    <a class="contact-item" href="mailto:nicolasisaacnogueiraperez@gmail.com">
+      <span class="contact-kicker">Email</span>
+      <span class="contact-value">Fale comigo ↗</span>
+    </a>
+
+    <a class="contact-item" href="https://www.instagram.com/nicoisaac10/?hl=pt-br" target="_blank" rel="noopener noreferrer">
+      <span class="contact-kicker">Instagram</span>
+      <span class="contact-value">@nicoisaac10 ↗</span>
+    </a>
+
+    <a class="contact-item" href="https://linkedin.com/in/nicolas-isaac-5006131a5" target="_blank" rel="noopener noreferrer">
+      <span class="contact-kicker">LinkedIn</span>
+      <span class="contact-value">Nicolas Isaac ↗</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <span>© 2026 Nicolas Isaac</span>
+    <span>Direção de arte / Criação</span>
+  </div>
+</section>
+
+</main>
+</body>
+</html>
