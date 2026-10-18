@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nicolas Isaac — Diretor de arte</title>
+  <meta name="description" content="Portfólio de Nicolas Isaac, diretor de arte em Campo Grande, Brasil. Projetos de publicidade, direção de arte e comunicação.">
+  <meta name="author" content="Nicolas Isaac">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nicolas Isaac — Diretor de arte">
+  <meta property="og:description" content="Portfólio de Nicolas Isaac, diretor de arte em Campo Grande, Brasil. Projetos de publicidade, direção de arte e comunicação.">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#d9d9d6;
+      --ink:#111111;
+      --muted:#666663;
+      --line:#a9a9a5;
+      --black:#000000;
+      --scroll-bg:#000000;
+      --scroll-hero-ink:#d9d9d6;
+      --pad:clamp(20px,3vw,52px);
+      --display:"Red Hat Display",Arial,sans-serif;
+      --body:"Google Sans",Arial,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      background:var(--scroll-bg);
+      color:var(--ink);
+      font-family:var(--body);
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%}
+
+    /* ABERTURA */
+    .hero{
+      min-height:100svh;
+      padding:var(--pad);
+      background:var(--scroll-bg);
+      color:var(--scroll-hero-ink);
+      display:grid;
+      grid-template-rows:1fr auto;
+      position:relative;
+    }
+    .hero-main{
+      display:grid;
+      grid-template-columns:max-content clamp(150px,14vw,230px);
+      gap:clamp(52px,4.5vw,82px);
+      align-items:start;
+      align-self:center;
+      justify-content:start;
+      width:100%;
+    }
+    .hero-name{
+      margin:0;
+      font-family:var(--display);
+      font-size:clamp(96px,13.5vw,258px);
+      line-height:.79;
+      letter-spacing:-.065em;
+      font-weight:900;
+      text-transform:uppercase;
+      max-width:7ch;
+    }
+    .hero-profile{
+      align-self:start;
+      justify-self:start;
+      width:100%;
+      margin-top:2px;
+    }
+    .hero-photo{
+      width:100%;
+      aspect-ratio:1;
+      margin:0 0 14px;
+      overflow:hidden;
+      background:#222;
+    }
+    .hero-photo img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 26%;
+      filter:grayscale(100%);
+    }
+    .hero-role{
+      margin:0;
+      font-family:var(--display);
+      font-size:clamp(18px,1.4vw,25px);
+      line-height:1;
+      letter-spacing:-.035em;
+      font-weight:600;
+      text-transform:uppercase;
+    }
+    .hero-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:20px;
+      padding-top:24px;
+      font-size:10px;
+      line-height:1.35;
+      text-transform:uppercase;
+      letter-spacing:.075em;
+    }
+    .hero-jump{opacity:.72;transition:opacity .2s ease}
+    .hero-jump:hover{opacity:1}
+
+
+    /* PROJETOS */
+    .projects{
+      padding:clamp(42px,5vw,76px) var(--pad) clamp(90px,10vw,150px);
+      background:var(--scroll-bg);
+      color:var(--ink);
+    }
+    .projects-head{
+      padding-bottom:18px;
+      margin-bottom:clamp(34px,4.5vw,62px);
+      border-bottom:1px solid var(--ink);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.07em;
+    }
+    .projects-label{
+      margin:0 0 20px;
+      font-size:clamp(14px,.9vw,16px);
+      line-height:1;
+      font-weight:400;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:clamp(38px,5vw,74px) clamp(14px,1.6vw,26px);
+    }
+    .project-card{display:block;min-width:0}
+    .project-thumb{
+      width:100%;
+      aspect-ratio:16/9;
+      overflow:hidden;
+      background:#b7b7b3;
+    }
+    .project-thumb img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .28s ease,opacity .28s ease;
+    }
+    .project-info{
+      padding-top:12px;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:14px;
+      align-items:start;
+    }
+    .project-title{
+      margin:0;
+      font-family:var(--display);
+      font-size:clamp(19px,1.65vw,28px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      font-weight:600;
+      text-transform:uppercase;
+    }
+    .project-meta{
+      padding-top:.35em;
+      font-size:10px;
+      line-height:1.25;
+      text-align:right;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      white-space:nowrap;
+    }
+    @media(hover:hover){
+      .project-card:hover .project-thumb img{transform:scale(1.012);opacity:.82}
+    }
+
+    /* SOBRE */
+    .section{padding:clamp(66px,8vw,118px) var(--pad)}
+    .about{
+      border-top:1px solid var(--ink);
+      display:grid;
+      grid-template-columns:minmax(100px,.42fr) minmax(180px,250px) minmax(0,1.6fr);
+      column-gap:clamp(22px,3vw,42px);
+      row-gap:clamp(34px,4vw,58px);
+      align-items:start;
+      background:var(--bg);
+    }
+    .section-label{
+      margin:0;
+      font-size:clamp(14px,.9vw,16px);
+      line-height:1;
+      font-weight:400;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .about-photo{
+      width:100%;
+      max-width:230px;
+      aspect-ratio:3/4;
+      margin:0;
+      overflow:hidden;
+      background:#bdbdb9;
+    }
+    .about-photo img{display:block;width:100%;height:100%;object-fit:cover}
+    .about-copy{
+      max-width:760px;
+      font-size:clamp(18px,1.45vw,24px);
+      line-height:1.38;
+      letter-spacing:-.012em;
+      font-weight:400;
+    }
+    .about-copy p{margin:0 0 .95em}
+    .about-copy p:last-child{margin-bottom:0}
+
+    /* RECONHECIMENTOS — continuação da seção Sobre */
+    .recognitions-label{
+      grid-column:1;
+      align-self:start;
+    }
+    .recognitions-list{
+      grid-column:3;
+      max-width:760px;
+    }
+    .award{margin:0 0 clamp(26px,3vw,38px)}
+    .award:last-child{margin-bottom:0}
+    .award-title{
+      margin:0 0 7px;
+      font-size:clamp(17px,1.3vw,21px);
+      line-height:1.25;
+      font-weight:400;
+    }
+    .award-entry{
+      margin:0;
+      font-size:clamp(16px,1.15vw,19px);
+      line-height:1.4;
+      color:var(--muted);
+    }
+    .award-entry strong{color:var(--ink);font-weight:600}
+
+    /* CONTATO */
+    .contact{
+      padding:clamp(44px,5vw,72px) var(--pad) clamp(34px,4vw,58px);
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:clamp(24px,5vw,70px);
+    }
+    .contact-item{
+      border-top:1px solid var(--ink);
+      padding-top:12px;
+      min-height:88px;
+      display:flex;
+      flex-direction:column;
+      gap:clamp(20px,2vw,30px);
+    }
+    .contact-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+    .contact-value{
+      font-family:var(--display);
+      font-size:clamp(24px,2.6vw,42px);
+      line-height:.95;
+      letter-spacing:-.04em;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+    .footer{
+      margin-top:clamp(70px,9vw,120px);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.07em;
+    }
+    @media(hover:hover){.contact-item:hover .contact-value{opacity:.5}}
+
+    @media(max-width:980px){
+      .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .hero-main{grid-template-columns:max-content clamp(140px,18vw,200px);gap:clamp(38px,4.5vw,62px);align-items:start}
+      .hero-name{font-size:clamp(84px,15vw,170px)}
+    }
+
+    @media(max-width:760px){
+      .hero{min-height:100svh;padding:20px}
+      .hero-main{
+        grid-template-columns:1fr;
+        align-content:center;
+        gap:30px;
+      }
+      .hero-name{font-size:clamp(74px,21vw,118px);line-height:.81}
+      .hero-profile{justify-self:start;width:min(42vw,170px)}
+      .hero-photo{margin-bottom:10px}
+      .hero-role{font-size:18px}
+      .hero-bottom{font-size:9px}
+      .projects{padding-left:20px;padding-right:20px}
+      .projects-grid{grid-template-columns:1fr;gap:42px}
+      .project-title{font-size:26px}
+      .project-meta{font-size:9px}
+      .about{
+        grid-template-columns:1fr;
+        row-gap:28px;
+        padding-left:20px;
+        padding-right:20px;
+      }
+      .about-photo{width:min(58vw,220px)}
+      .about-copy{font-size:18px}
+      .recognitions-label,
+      .recognitions-list{
+        grid-column:1;
+      }
+      .recognitions-label{margin-top:6px}
+      .contact{padding-left:20px;padding-right:20px}
+      .contact-grid{grid-template-columns:1fr}
+      .footer{flex-direction:column}
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero-main">
+        <h1 class="hero-name">Nicolas<br>Isaac</h1>
+
+        <div class="hero-profile">
+          <figure class="hero-photo">
+            <img src="assets/home/about.webp" alt="Nicolas Isaac">
+          </figure>
+          <p class="hero-role">Diretor de arte</p>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <span>Campo Grande, Brasil<br>Desde 2018</span>
+        <a class="hero-jump" href="#projetos">Projetos ↓</a>
+      </div>
+    </section>
+
+    <section class="projects" id="projetos">
+      <div class="projects-head">
+        <span>Nicolas Isaac</span>
+        <span>Diretor de arte</span>
+      </div>
+      <h2 class="projects-label">Projetos</h2>
+
+      <div class="projects-grid">
+        <a class="project-card" href="projects/deixa-eu-te-contar-um-negocio.html">
+          <div class="project-thumb"><img src="assets/home/deixa-eu-te-contar-um-negocio.webp" alt="Deixa eu te contar um negócio" loading="lazy"></div>
+          <div class="project-info"><h3 class="project-title">Deixa eu te contar um negócio</h3><div class="project-meta">Sebrae/MS<br>2024</div></div>
+        </a>
+
+        <a class="project-card" href="projects/gratidao-por-quem-faz-acontecer.html">
+          <div class="project-thumb"><img src="assets/home/gratidao-por-quem-faz-acontecer.webp" alt="Gratidão por quem faz acontecer" loading="lazy"></div>
+          <div class="project-info"><h3 class="project-title">Gratidão por quem faz acontecer</h3><div class="project-meta">Sebrae/MS<br>2025</div></div>
+        </a>
+
+        <a class="project-card" href="projects/simplifica-sebrae.html">
+          <div class="project-thumb"><img src="assets/home/simplifica-sebrae.webp" alt="Simplifica Sebrae" loading="lazy"></div>
+          <div class="project-info"><h3 class="project-title">Simplifica Sebrae</h3><div class="project-meta">Sebrae/MS<br>2023</div></div>
+        </a>
+
+        <a class="project-card" href="projects/sebrae-resolve.html">
+          <div class="project-thumb"><img src="assets/home/sebrae-resolve.webp" alt="Sebrae Resolve" loading="lazy"></div>
+          <div class="project-info"><h3 class="project-title">Sebrae Resolve</h3><div class="project-meta">Sebrae/MS<br>2023</div></div>
+        </a>
+
+        <a class="project-card" href="projects/sebrae-delas.html">
+          <div class="project-thumb"><img src="assets/home/sebrae-delas.webp" alt="Sebrae Delas" loading="lazy"></div>
+          <div class="project-info"><h3 class="project-title">Sebrae Delas</h3><div class="project-meta">Sebrae/MS<br>2023</div></div>
+        </a>
+
+        <a class="project-card" href="projects/sou-flamengo.html">
+          <div class="project-thumb"><img src="assets/home/sou-flamengo.webp" alt="Sou Flamengo" loading="lazy"></div>
+          <div class="project-info"><h3 class="project-title">Sou Flamengo</h3><div class="project-meta">Projeto pessoal<br>Desde 2024</div></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section about" id="sobre">
+      <h2 class="section-label">Sobre</h2>
+
+      <figure class="about-photo">
+        <img src="assets/home/about.webp" alt="Nicolas Isaac" loading="lazy" decoding="async">
+      </figure>
+
+      <div class="about-copy">
+        <p>Minha relação com criação começou ainda na adolescência, quando fiz um curso técnico de Comunicação Visual. Muitas das coisas que aprendi ali apareceram de novo anos depois, na faculdade — só que, dessa vez, fazendo muito mais sentido.</p>
+        <p>Sempre gostei de desenhar, assistir TV e reparar nas coisas. Na pré-adolescência, meus pais assinavam a revista Veja, e eu acabava prestando muita atenção nos anúncios. Alguns ficaram na memória por muito tempo. Na época eu não pensava em publicidade, mas olhando hoje, acho que muita coisa começou ali.</p>
+        <p>Trabalho na área desde 2018 e, hoje, o que mais influencia meu jeito de criar é a vivência: observar comportamentos, entender o porquê das coisas e prestar atenção no que normalmente passa despercebido.</p>
+        <p>No fim, sigo tentando fazer o que sempre gostei: olhar para as coisas com atenção e encontrar uma boa ideia no meio delas.</p>
+      </div>
+
+      <h2 class="section-label recognitions-label" id="reconhecimentos">Reconhecimentos</h2>
+      <div class="recognitions-list">
+        <div class="award">
+          <h3 class="award-title">Prêmio Propaganda Brasileira</h3>
+          <p class="award-entry"><strong>Prata.</strong> Case de Sucesso — Sebrae Resolve</p>
+          <p class="award-entry"><strong>Prata.</strong> Campanha Institucional — Sebrae Simplifica</p>
+        </div>
+
+        <div class="award">
+          <h3 class="award-title">FestVideo 2026</h3>
+          <p class="award-entry"><strong>Prata.</strong> Institucional de Serviço — Fim de Ano Sebrae/MS</p>
+        </div>
+
+        <div class="award">
+          <h3 class="award-title">Prêmio Arara Azul</h3>
+          <p class="award-entry"><strong>Bronze.</strong> Campanha Institucional — Sebrae Simplifica</p>
+          <p class="award-entry"><strong>Bronze.</strong> Mídias Digitais — Sebrae Simplifica Cabral</p>
+          <p class="award-entry"><strong>Bronze.</strong> Case de Sucesso — Sebrae Resolve</p>
+          <p class="award-entry"><strong>Bronze.</strong> TV/Cinema Institucional — Sebrae Resolve</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="contact-grid">
+        <a class="contact-item" href="mailto:nicolasisaacnogueiraperez@gmail.com">
+          <span class="contact-kicker">Email</span>
+          <span class="contact-value">Fale comigo ↗</span>
+        </a>
+        <a class="contact-item" href="https://www.instagram.com/nicoisaac10/?hl=pt-br" target="_blank" rel="noopener noreferrer">
+          <span class="contact-kicker">Instagram</span>
+          <span class="contact-value">@nicoisaac10 ↗</span>
+        </a>
+        <a class="contact-item" href="https://linkedin.com/in/nicolas-isaac-5006131a5" target="_blank" rel="noopener noreferrer">
+          <span class="contact-kicker">LinkedIn</span>
+          <span class="contact-value">Nicolas Isaac ↗</span>
+        </a>
+      </div>
+      <div class="footer">
+        <span>© 2026 Nicolas Isaac</span>
+        <span>Direção de arte / Criação</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const hero = document.querySelector('.hero');
+      const root = document.documentElement;
+      const theme = document.querySelector('meta[name="theme-color"]');
+
+      const startBg = [0, 0, 0];
+      const endBg = [217, 217, 214];
+      const startInk = [217, 217, 214];
+      const endInk = [17, 17, 17];
+
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+      const mix = (a, b, t) => Math.round(a + (b - a) * t);
+      const rgb = (from, to, t) =>
+        `rgb(${mix(from[0],to[0],t)}, ${mix(from[1],to[1],t)}, ${mix(from[2],to[2],t)})`;
+
+      let ticking = false;
+
+      function updateColors(){
+        const heroHeight = Math.max(hero.offsetHeight, window.innerHeight);
+        const start = heroHeight * 0.06;
+        const end = heroHeight * 0.72;
+        const progress = clamp((window.scrollY - start) / (end - start), 0, 1);
+
+        const bg = rgb(startBg, endBg, progress);
+        const ink = rgb(startInk, endInk, progress);
+
+        root.style.setProperty('--scroll-bg', bg);
+        root.style.setProperty('--scroll-hero-ink', ink);
+
+        if(theme){
+          const r = mix(startBg[0], endBg[0], progress);
+          const g = mix(startBg[1], endBg[1], progress);
+          const b = mix(startBg[2], endBg[2], progress);
+          theme.setAttribute('content', `rgb(${r},${g},${b})`);
+        }
+
+        ticking = false;
+      }
+
+      function requestUpdate(){
+        if(!ticking){
+          requestAnimationFrame(updateColors);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', requestUpdate, {passive:true});
+      window.addEventListener('resize', requestUpdate);
+      updateColors();
+    })();
+  </script>
+
+</body>
+</html>

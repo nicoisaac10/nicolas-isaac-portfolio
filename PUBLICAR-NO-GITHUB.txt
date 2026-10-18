@@ -1,0 +1,24 @@
+NICOLAS ISAAC — PORTFÓLIO
+Versão revisada do portfólio, preparada para publicação estática.
+
+ESTRUTURA
+- index.html deve ficar na raiz do repositório.
+- mantenha as pastas assets/ e projects/ exatamente como estão.
+- o arquivo .nojekyll evita processamento desnecessário pelo GitHub Pages.
+
+PUBLICAÇÃO
+1. Crie um repositório no GitHub.
+2. Envie TODO o conteúdo desta pasta para a raiz do repositório.
+3. No GitHub: Settings > Pages.
+4. Em Build and deployment, escolha Deploy from a branch.
+5. Selecione a branch main e a pasta /(root).
+6. Salve e aguarde a URL temporária do GitHub Pages.
+
+DOMÍNIO
+Não foi criado CNAME ainda porque o domínio final não foi informado.
+Depois que o domínio for definido, configure-o em Settings > Pages > Custom domain.
+
+OBSERVAÇÃO SOBRE VÍDEOS
+Os vídeos dos cases continuam incorporados pelo Google Drive nesta versão.
+Isso mantém o repositório leve e permite publicar imediatamente. Depois, se desejar,
+podemos migrar os vídeos para arquivos web otimizados ou outra hospedagem de mídia.
